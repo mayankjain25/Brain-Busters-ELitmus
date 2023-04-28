@@ -9,16 +9,17 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast,ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
-
 const useStyles = makeStyles({
   timerContainer: {
-    position: 'static',
-    top: 0,
-    right: 5,
+    position: 'fixed',
+    // top: 0,
+    // right: 5,
+    bottom:0,
+    right:0,
+    // transform: 'translateX(-50%)',
+    width:'10%',
     padding: '40px',
-    backgroundColor: '#cae0e8',
+    backgroundColor: 'white',
     borderRadius: '5px',
     boxShadow: '1px 1px 20px rgba(0, 0, 0, 0.25)',
     zIndex: 9999,
@@ -109,7 +110,7 @@ const usersCollectionRef = collection(db, "users");
 const [user] = useAuthState(auth);
 let username;
 let useremail;
-let Time = 480;
+let Time = 48000;
 let status = "Losse";
 let clues = 0; 
 if (user && (user.displayName || user.email)) {
